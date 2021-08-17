@@ -238,7 +238,7 @@ class Session{
 					}
 				}
 			}elseif($id === DisconnectionNotification::$ID){
-				$this->initiateDisconnect("client disconnect");
+				$this->forciblyDisconnect("client disconnect");
 			}elseif($id === ConnectedPing::$ID){
 				$dataPacket = new ConnectedPing();
 				$dataPacket->decode(new PacketSerializer($packet->buffer));
